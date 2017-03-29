@@ -1,0 +1,24 @@
+C:\Users\Mike\AppData\Local\Temporary Projects\LanChat\bin\Debug\LanChat.exe
+C:\Users\Mike\AppData\Local\Temporary Projects\LanChat\bin\Debug\LanChat.pdb
+C:\Users\Mike\AppData\Local\Temporary Projects\LanChat\bin\Debug\LanChat.xml
+C:\Users\Mike\AppData\Local\Temporary Projects\LanChat\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Mike\AppData\Local\Temporary Projects\LanChat\obj\x86\Debug\LanChat.Form1.resources
+C:\Users\Mike\AppData\Local\Temporary Projects\LanChat\obj\x86\Debug\LanChat.Resources.resources
+C:\Users\Mike\AppData\Local\Temporary Projects\LanChat\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\Mike\AppData\Local\Temporary Projects\LanChat\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\Mike\AppData\Local\Temporary Projects\LanChat\obj\x86\Debug\LanChat.exe
+C:\Users\Mike\AppData\Local\Temporary Projects\LanChat\obj\x86\Debug\LanChat.xml
+C:\Users\Mike\AppData\Local\Temporary Projects\LanChat\obj\x86\Debug\LanChat.pdb
+C:\Users\Mike\Documents\Visual Studio 2010\Projects\LanChat\LanChat\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Mike\Documents\Visual Studio 2010\Projects\LanChat\LanChat\obj\x86\Debug\LanChat.ChatForm.resources
+C:\Users\Mike\Documents\Visual Studio 2010\Projects\LanChat\LanChat\obj\x86\Debug\LanChat.Resources.resources
+C:\Users\Mike\Documents\Visual Studio 2010\Projects\LanChat\LanChat\bin\Debug\LanChat.exe
+C:\Users\Mike\Documents\Visual Studio 2010\Projects\LanChat\LanChat\bin\Debug\LanChat.pdb
+C:\Users\Mike\Documents\Visual Studio 2010\Projects\LanChat\LanChat\bin\Debug\LanChat.xml
+C:\Users\Mike\Documents\Visual Studio 2010\Projects\LanChat\LanChat\obj\x86\Debug\LanChat.exe
+C:\Users\Mike\Documents\Visual Studio 2010\Projects\LanChat\LanChat\obj\x86\Debug\LanChat.xml
+C:\Users\Mike\Documents\Visual Studio 2010\Projects\LanChat\LanChat\obj\x86\Debug\LanChat.pdb
+C:\Users\Mike\Documents\Visual Studio 2010\Projects\LanChat\LanChat\obj\x86\Debug\LanChat.ChatStart.resources
+C:\Users\Mike\Documents\Visual Studio 2010\Projects\LanChat\LanChat\bin\Debug\LanChat.exe.config
+C:\Users\Mike\Documents\Visual Studio 2010\Projects\LanChat\LanChat\obj\x86\Debug\ResGen.read.1.tlog
+C:\Users\Mike\Documents\Visual Studio 2010\Projects\LanChat\LanChat\obj\x86\Debug\ResGen.write.1.tlog
