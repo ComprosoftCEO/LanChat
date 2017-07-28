@@ -12,7 +12,7 @@ Public Class ChatServer
     Public Sub New()
         Tray.Icon = My.Resources.Chat
         Tray.Visible = True
-        Tray.Text = "LAN Chat"
+        Tray.Text = "LAN Crypt"
 
         Server = New TcpListener(IPAddress.Any, 50000) ' <-- Listen on Port 50,000
         ServerThread = New Thread(AddressOf ConnectionListener)
@@ -43,6 +43,8 @@ Public Class ChatServer
     Private Sub Tray_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles Tray.Click
         ChatStart.Show()
     End Sub
+
+
 
     Private Sub ChatServer_ThreadExit(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.ThreadExit
         Tray.Visible = False

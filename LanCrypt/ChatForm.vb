@@ -57,13 +57,17 @@ Public Class ChatForm
         btnSendPage.Enabled = state
         btnSendMessage.Enabled = state
         tbMessageToSend.Enabled = state
+        chkToEncrypt.Enabled = state
+        lblSecretKey.Enabled = state
+        txtEncryptionKey.Enabled = state
     End Sub
+
 
     Private Sub BackgroundWorker1_DoWork(ByVal sender As System.Object, ByVal e As System.ComponentModel.DoWorkEventArgs) Handles BackgroundWorker1.DoWork
         If IsNothing(ChatClient) Then ' We are initiating the connection
             Try
                 ChatClient = New TcpClient()
-                ChatClient.Connect(ConnectTo, 5000) ' Blocks until connection is made
+                ChatClient.Connect(ConnectTo, 50000) ' Blocks until connection is made
             Catch ex As Exception
                 ContinueProcessingMessages = False
                 BackgroundWorker1.ReportProgress(-2) ' Connection Failed
@@ -155,7 +159,7 @@ Public Class ChatForm
                                     lblStatus.Text = ""
 
                                 Case MessageCodes.TEXT ' A text message from the other person has arrived
-                                    DisplayMessage(Color.DarkGreen, value)
+                                    DecryptData(value, txtEncryptionKey.Text, chkToEncrypt.Checked)
                                     If Not cbMute.Checked Then
                                         ChatForm.Play(Sound.ChatMessage)
                                     End If
@@ -219,7 +223,7 @@ Public Class ChatForm
 
     Private Sub btnSendMessage_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSendMessage.Click
         If tbMessageToSend.Text.Trim <> "" Then
-            If SendMessage(MessageCodes.TEXT, tbMessageToSend.Text) Then
+            If SendMessage(MessageCodes.TEXT, EncryptData(tbMessageToSend.Text, txtEncryptionKey.Text, chkToEncrypt.Checked)) Then
                 DisplayMessage(Color.Black, tbMessageToSend.Text)
                 tbMessageToSend.Clear()
             Else
@@ -363,5 +367,57 @@ Public Class ChatForm
     End Class
 
 #End Region
+
+    Private Sub chkToEncrypt_CheckedChanged(sender As System.Object, e As System.EventArgs) Handles chkToEncrypt.CheckedChanged
+
+        'Turn on or off the encryption
+        lblSecretKey.Enabled = sender.checked
+        txtEncryptionKey.Enabled = sender.checked
+
+    End Sub
+
+
+    Private Function EncryptData(ByVal msg As String, ByVal key As String, ByVal enabled As Boolean) As String
+
+        If enabled = False Then
+            Return msg
+        End If
+
+        'Get the filtered string
+        Dim TempMessage As String = FilterCharacters(msg)
+        Dim TempKey As String = FilterCharacters(key)
+
+        Dim EncryptedMessage As String = PseudoXor(TempMessage, TempKey)
+
+        EncryptedMessage = AddExtraCharacters(EncryptedMessage, TempKey)
+
+        Return EncryptedMessage
+
+    End Function
+
+
+    Private Sub DecryptData(ByVal msg As String, ByVal key As String, ByVal enabled As Boolean)
+
+        If enabled = False Then
+            DisplayMessage(Color.DarkGreen, msg)
+            Exit Sub
+        End If
+
+        'Get the filtered string
+        Dim TempMessage As String = FilterCharacters(msg)
+        Dim TempKey As String = FilterCharacters(key)
+
+        'Stop the program if there is an error decrypting
+        Try
+            Dim DecryptedMessage As String = RemoveExtraChars(TempMessage, TempKey)
+
+            DecryptedMessage = PseudoXor(DecryptedMessage, TempKey)
+
+            DisplayMessage(Color.DarkGreen, DecryptedMessage)
+        Catch
+            DisplayMessage(Color.DarkRed, msg & Environment.NewLine & "****Unable to decrypt received message!****")
+        End Try
+
+    End Sub
 
 End Class

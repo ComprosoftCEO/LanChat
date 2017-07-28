@@ -33,6 +33,9 @@ Partial Class ChatForm
         Me.cbMute = New System.Windows.Forms.CheckBox()
         Me.cbFlash = New System.Windows.Forms.CheckBox()
         Me.lblStatus = New System.Windows.Forms.Label()
+        Me.chkToEncrypt = New System.Windows.Forms.CheckBox()
+        Me.lblSecretKey = New System.Windows.Forms.Label()
+        Me.txtEncryptionKey = New System.Windows.Forms.TextBox()
         Me.SuspendLayout()
         '
         'BackgroundWorker1
@@ -43,9 +46,9 @@ Partial Class ChatForm
         'tbMessageToSend
         '
         Me.tbMessageToSend.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.tbMessageToSend.Enabled = False
-        Me.tbMessageToSend.Location = New System.Drawing.Point(12, 230)
+        Me.tbMessageToSend.Location = New System.Drawing.Point(12, 236)
         Me.tbMessageToSend.Name = "tbMessageToSend"
         Me.tbMessageToSend.Size = New System.Drawing.Size(259, 20)
         Me.tbMessageToSend.TabIndex = 0
@@ -54,7 +57,7 @@ Partial Class ChatForm
         '
         Me.btnSendMessage.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnSendMessage.Enabled = False
-        Me.btnSendMessage.Location = New System.Drawing.Point(277, 228)
+        Me.btnSendMessage.Location = New System.Drawing.Point(277, 234)
         Me.btnSendMessage.Name = "btnSendMessage"
         Me.btnSendMessage.Size = New System.Drawing.Size(75, 23)
         Me.btnSendMessage.TabIndex = 1
@@ -64,12 +67,12 @@ Partial Class ChatForm
         'rtbConversation
         '
         Me.rtbConversation.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                    Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.rtbConversation.Location = New System.Drawing.Point(12, 35)
         Me.rtbConversation.Name = "rtbConversation"
         Me.rtbConversation.ReadOnly = True
-        Me.rtbConversation.Size = New System.Drawing.Size(421, 189)
+        Me.rtbConversation.Size = New System.Drawing.Size(421, 188)
         Me.rtbConversation.TabIndex = 2
         Me.rtbConversation.TabStop = False
         Me.rtbConversation.Text = ""
@@ -78,7 +81,7 @@ Partial Class ChatForm
         '
         Me.btnSendPage.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnSendPage.Enabled = False
-        Me.btnSendPage.Location = New System.Drawing.Point(358, 228)
+        Me.btnSendPage.Location = New System.Drawing.Point(358, 234)
         Me.btnSendPage.Name = "btnSendPage"
         Me.btnSendPage.Size = New System.Drawing.Size(75, 23)
         Me.btnSendPage.TabIndex = 3
@@ -116,7 +119,7 @@ Partial Class ChatForm
         'lblStatus
         '
         Me.lblStatus.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lblStatus.AutoEllipsis = True
         Me.lblStatus.Location = New System.Drawing.Point(12, 12)
         Me.lblStatus.Name = "lblStatus"
@@ -124,12 +127,52 @@ Partial Class ChatForm
         Me.lblStatus.TabIndex = 6
         Me.lblStatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
+        'chkToEncrypt
+        '
+        Me.chkToEncrypt.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.chkToEncrypt.AutoSize = True
+        Me.chkToEncrypt.Checked = True
+        Me.chkToEncrypt.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.chkToEncrypt.Location = New System.Drawing.Point(15, 265)
+        Me.chkToEncrypt.Name = "chkToEncrypt"
+        Me.chkToEncrypt.Size = New System.Drawing.Size(108, 17)
+        Me.chkToEncrypt.TabIndex = 7
+        Me.chkToEncrypt.Text = "Encrypt Message"
+        Me.chkToEncrypt.UseVisualStyleBackColor = True
+        '
+        'lblSecretKey
+        '
+        Me.lblSecretKey.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lblSecretKey.AutoSize = True
+        Me.lblSecretKey.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblSecretKey.Location = New System.Drawing.Point(152, 265)
+        Me.lblSecretKey.Name = "lblSecretKey"
+        Me.lblSecretKey.Size = New System.Drawing.Size(34, 16)
+        Me.lblSecretKey.TabIndex = 8
+        Me.lblSecretKey.Text = "Key:"
+        '
+        'txtEncryptionKey
+        '
+        Me.txtEncryptionKey.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.txtEncryptionKey.Enabled = False
+        Me.txtEncryptionKey.Location = New System.Drawing.Point(192, 265)
+        Me.txtEncryptionKey.Name = "txtEncryptionKey"
+        Me.txtEncryptionKey.Size = New System.Drawing.Size(221, 20)
+        Me.txtEncryptionKey.TabIndex = 9
+        Me.txtEncryptionKey.Text = "(Enter a Secret Key)"
+        '
         'ChatForm
         '
         Me.AcceptButton = Me.btnSendMessage
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(445, 262)
+        Me.ClientSize = New System.Drawing.Size(445, 292)
+        Me.Controls.Add(Me.txtEncryptionKey)
+        Me.Controls.Add(Me.lblSecretKey)
+        Me.Controls.Add(Me.chkToEncrypt)
         Me.Controls.Add(Me.lblStatus)
         Me.Controls.Add(Me.cbFlash)
         Me.Controls.Add(Me.cbMute)
@@ -153,5 +196,8 @@ Partial Class ChatForm
     Friend WithEvents cbMute As System.Windows.Forms.CheckBox
     Friend WithEvents cbFlash As System.Windows.Forms.CheckBox
     Friend WithEvents lblStatus As System.Windows.Forms.Label
+    Friend WithEvents chkToEncrypt As System.Windows.Forms.CheckBox
+    Friend WithEvents lblSecretKey As System.Windows.Forms.Label
+    Friend WithEvents txtEncryptionKey As System.Windows.Forms.TextBox
 
 End Class

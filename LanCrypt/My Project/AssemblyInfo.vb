@@ -8,11 +8,11 @@ Imports System.Runtime.InteropServices
 
 ' Review the values of the assembly attributes
 
-<Assembly: AssemblyTitle("LanChat")> 
-<Assembly: AssemblyDescription("")> 
-<Assembly: AssemblyCompany("")> 
-<Assembly: AssemblyProduct("LanChat")> 
-<Assembly: AssemblyCopyright("Copyright ©  2011")> 
+<Assembly: AssemblyTitle("LanCrypt")> 
+<Assembly: AssemblyDescription("Instant Message Encryption Software")> 
+<Assembly: AssemblyCompany("Comprosoft")> 
+<Assembly: AssemblyProduct("LanCrypt")> 
+<Assembly: AssemblyCopyright("Copyright © Comprosoft  2016")> 
 <Assembly: AssemblyTrademark("")> 
 
 <Assembly: ComVisible(False)>

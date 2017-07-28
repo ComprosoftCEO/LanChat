@@ -28,7 +28,7 @@ Public Class ChatStart
         If lbComputers.SelectedIndex <> -1 Then
             Dim chat As New ChatForm(lbComputers.SelectedItem.ToString)
             chat.Show()
-            'Me.Close()
+            Me.Close()
         End If
     End Sub
 
@@ -79,7 +79,4 @@ Public Class ChatStart
 
 #End Region
 
-    Private Sub ChatStart_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-
-    End Sub
 End Class
