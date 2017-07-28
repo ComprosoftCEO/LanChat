@@ -18,3 +18,6 @@ C:\Program Files (x86)\Visual Basic Programs\Useful Tools\LanCrypt\LanCrypt\LanC
 C:\Program Files (x86)\Visual Basic Programs\Useful Tools\LanCrypt\LanCrypt\LanCrypt\obj\x86\Debug\LanCrypt.vbproj.GenerateResource.Cache
 C:\Program Files (x86)\Visual Basic Programs\Useful Tools\LanCrypt\LanCrypt\LanCrypt\bin\Debug\LanCrypt.pdb
 C:\Program Files (x86)\Visual Basic Programs\Useful Tools\LanCrypt\LanCrypt\LanCrypt\bin\Debug\LanCrypt.xml
+C:\Users\William_2\Downloads\LanCrypt-master\LanCrypt-master\LanCrypt\obj\x86\Debug\LanCrypt.exe
+C:\Users\William_2\Downloads\LanCrypt-master\LanCrypt-master\LanCrypt\obj\x86\Debug\LanCrypt.xml
+C:\Users\William_2\Downloads\LanCrypt-master\LanCrypt-master\LanCrypt\obj\x86\Debug\LanCrypt.pdb
